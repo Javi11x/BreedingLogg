@@ -1,0 +1,56 @@
+﻿@page
+@model BreedingLogg.Pages.PresentaciónModel
+@{
+}
+
+<div class="containerLogin">
+    <div class="background"></div>
+    <div class="FormLogin text-center">
+        <style>
+            .ColorBotones {
+                background: #76448A !important;
+                border-color: #76448A !important;
+            }
+        </style>
+
+        <div>
+            <h1 class="display-2"><strong>¿Ya tienes una cuenta?</strong></h1>
+            <style>
+                .display-2 {
+                    color: whitesmoke;
+                }
+            </style>
+        </div>
+
+        <div>
+
+            <h6 class="textoLogin">
+
+                Inicia Sesión y disfruta las ventajas de ser un socio VET.
+
+            </h6>
+            <br />
+            <style>
+                .textoLogin {
+                    color: white;
+                }
+            </style>
+        </div>
+        
+        <div class="AlinearBotones">
+
+            <h6 class="textoLogin"> Selecciona un Perfil de Acceso</h6>
+
+            <form method="post">
+
+                <input type="submit" class="ColorBotones btn btn-primary" value="Administrador" asp-page-handler="Usuarios" />
+
+                <input type="submit" class="ColorBotones btn btn-primary" value="Criador" asp-page-handler="Criadores" />
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>

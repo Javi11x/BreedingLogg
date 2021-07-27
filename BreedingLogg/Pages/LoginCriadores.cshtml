@@ -1,0 +1,52 @@
+﻿@page
+@model BreedingLogg.Pages.LoginModel
+@{
+}
+
+<div class="text-center">
+    <h1 class="display-4">ACCESO A CRIADORES</h1>
+    <p>VeteriSystems tu sistema de consulta de crianza de confianza.</p>
+    <br />
+    <br />
+    <br />
+    <br />
+
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <!--Formulario-->
+            <div class="FormLogin">
+                <form method="post">
+
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Usuario:</label>
+                        <input class="form-control" type="text" asp-for="usuario" aria-describedby="userHelp" required />
+                        <div class="invalid-feedback">
+                            Debes ingresar el Nombre de Usuario del Criador
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                        <input class="form-control" type="password" asp-for="contrasena" required />
+                        <div class="invalid-feedback">
+                            Debes ingresar la Contraseña
+                        </div>
+                    </div>
+
+                    <div class="modal-footer"></div>
+                    <div>
+                        <button class="btn btn-primary" type="submit">Iniciar Sesión</button>
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

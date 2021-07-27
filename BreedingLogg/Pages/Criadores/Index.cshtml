@@ -1,0 +1,103 @@
+﻿@page
+@model BreedingLogg.Pages.Criadores.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="text-center">
+    <h1 class="display-4">CRIADORES</h1>
+    <p>Consulta de Criadores</p>
+
+</div>
+
+<p>
+    <a asp-page="Create">Nuevo Criador</a>
+</p>
+
+<div>
+    <br />
+</div>
+
+<div class="row">
+    @foreach (var item in Model.Criador)
+    {
+        <div class="col mb-4">
+
+            <div class="item card" style="width:1100px;">
+
+                <h5 class="card-header">@Html.DisplayFor(modelItem => item.NombreCriador) @Html.DisplayFor(modelItem => item.ApellidosCriador)</h5>
+
+                <div class="card-body">
+
+                    <h5 class="card-title">@Html.DisplayFor(modelItem => item.NivelCriador)</h5>
+
+                    <div class="row">
+
+                        <div class="col">
+                            <img width="100" height="50" alt="Responsive image" class="img-fluid" src="~/img/@Html.DisplayFor(modelItem => item.FotoCriador)" style="border-radius:10px;" />
+                        </div>
+
+                        <!--DIRECCION-->
+                        <div class="col">
+                            <h6>Dirección</h6>
+                            <p class="text-muted">@Html.DisplayFor(modelItem => item.DireccionCriadero)</p>
+                        </div>
+
+                        <!--ESPECIE QUE CRIA-->
+                        <div class="col">
+                            <h6>Especie que Cria</h6>
+                            <p class="text-muted">@Html.DisplayFor(modelItem => item.EspecieQC)</p>
+                        </div>
+
+                        <div class="col">
+                            <h6>Usuario</h6>
+                            <p class="text-muted">@Html.DisplayFor(modelItem => item.UsuarioCriador)</p>
+                        </div>
+
+                        <div class="col">
+
+                        </div>
+
+
+
+                    </div>
+                    <br />
+                    <div class="row">
+
+                        <div class="col">
+                            <h6>Foto del Criadero</h6>
+                            <img width="250" height="200" alt="Responsive image" class="img-fluid" src="~/img/@Html.DisplayFor(modelItem => item.FotoCriadero)" style="border-radius:5px;" />
+                        </div>
+
+                        <div class="col">
+                            <h6>Correo</h6>
+                            <p class="text-muted">@Html.DisplayFor(modelItem => item.CorreoC)</p>
+                        </div>
+
+                        <div class="col">
+                            <h6>Redes Sociales</h6>
+                            <p class="text-muted">@Html.DisplayFor(modelItem => item.RedSocialC)</p>
+                        </div>
+
+                        <div class="col">
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+                <div class="card-footer">
+                    <a asp-page="./Edit" asp-route-id="@item.CriadorId" type="button" class="btn btn-primary">Editar</a> |
+                    <a asp-page="./Details" asp-route-id="@item.CriadorId" type="button" class="btn btn-primary">Detalles</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.CriadorId" type="button" class="btn btn-danger">Eliminar</a>
+                </div>
+
+            </div>
+
+        </div>
+    }
+</div>

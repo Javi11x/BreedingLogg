@@ -1,0 +1,215 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">¡Bienvenido!</h1>
+    <p>A VeteriSystems tu sistema de consulta de crianza de confianza.</p>
+
+</div>
+
+&nbsp;
+
+<div class="containerHome">
+    <div class="Grid1">
+        <div>
+            <div>
+                <br />
+                <br />
+                <h1 class="display-2">¿Te gusta la Crianza?</h1>
+                <h1 class="display-6">¿Buscas el mejor Pedegree?</h1>
+                <style>
+                    .display-2 {
+                        color: whitesmoke;
+                        text-align: center;
+                    }
+
+                    .display-6 {
+                        color: whitesmoke;
+                        text-align: center;
+                    }
+                </style>
+            </div>
+            <br />
+
+            <!--Divicion-->
+            <hr class="divider">
+
+            <div>
+                <br />
+                <h6 class="textoLogin">
+
+                    Nosotros te ofrecemos el mejor catálogo y los mejores Ejemplares para que tu Crianza sea la mejor experiencia
+
+                </h6>
+
+                <h6 class="textoLogin">
+                    <br />
+                    Solo, ¡LO MEJOR DE LO MEJOR!
+
+                </h6>
+                <style>
+                    .textoLogin {
+                        color: white;
+                        text-align: center;
+                    }
+                </style>
+                <br />
+                <br />
+
+                <!--BTN PORTADA-->
+                <div class="CentrarBtn">
+                    <a href="Presentación" class=" colorBtn btn btn-primary btn-lg" tabindex="-1" role="button">Ingresar</a>
+                </div>
+
+                <h6 class="textoLogin">
+                    <br />
+                    <br />
+                    Registrate y comienza a explorar en un mundo lleno de los mejores Ejemplares con el mejor Pedegree
+
+                </h6>
+            </div>
+        </div>
+    </div>
+
+    <div class="Grid2">
+        <style>
+            .Grid2 {
+                background-color: #f4623a;
+            }
+        </style>
+        <br />
+        <h6 class="textoLogin">
+            <br />
+            ¿Buscas un perro en particular?
+
+        </h6>
+        <br />
+        <h6 class="textoLogin">
+            <br />
+
+            Explora y conoce todas magníficas razas caninas
+
+        </h6>
+        <br />
+
+        <h1 class="display-6"><strong>SOMOS TU MEJOR OPCIÓN</strong></h1>
+        <!--Divicion-->
+        <hr class="divider-light">
+        <br />
+        <h6 class="textoLogin">
+            La mejor Crianza, los mejores Ejemplares, los mejores Criadores y
+            el mejor Pedegree al alcance de tu mano
+        </h6>
+    </div>
+
+
+    <!--TARJETAS-->
+
+    <div class="Cards align-items-center">
+
+        <br />
+
+        <!--EJEMPLARES-->
+        <div class="item  card mb-3">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="/img/EJEMPLARES_MUESTRA.jpg" alt="..." height="230" width="230">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="font-weight-bold card-title">EJEMPLARES</h5>
+                        <p class="card-text">
+
+                            Consulta nuestro catálogo y enamórate de nuestros ejemplares mas hermosos,
+                            finos y de buen pedigree.
+
+                        </p>
+
+                    </div>
+                    <a asp-page="/EjemplaresMachos/Index" class="btn btn-primary">Consultar / Machos</a>
+                    <a asp-page="/EjemplaresHembras/Index" class="hembra btn btn-primary">Consultar / Hembras</a>
+                    <style>
+                        .hembra {
+                            background-color: #CA3ACC;
+                            border-color: #CA3ACC;
+                        }
+
+                    </style>
+                </div>
+            </div>
+        </div>
+
+        <!--CRIADORES-->
+        <div class="item  card mb-3">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="/img/CRIADORES_MUESTRA.jpeg" alt="..." height="230" width="230">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="font-weight-bold card-title">CRIADORES</h5>
+                        <p class="card-text">
+
+                            Consulta el perfil y toda la información de nuestros criadores, contactalos y visita
+                            los ejemplares de tu agrado.
+
+                        </p>
+
+                    </div>
+                    <a href="Presentación" class="btn btn-primary">Acceder</a>
+                </div>
+            </div>
+        </div>
+
+        <!--CRUZA-->
+        <div class="item  card mb-3">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="/img/CRUZA_MUESTRA.jpg" alt="..." height="230" width="230">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="font-weight-bold card-title">CRUZAS</h5>
+                        <p class="card-text">
+
+                            Consulta la información de los ejemplares actuales que se encuentren en proceso de cruza,
+                            fechas de emparejamientos y fechas previstas de nacimiento. Así como datos de los padres, etc.
+
+                        </p>
+
+                    </div>
+                    <a href="/Cruces/Index" class="btn btn-primary">Consultar</a>
+                </div>
+            </div>
+        </div>
+
+        <!--ARBOL-->
+        <div class="item  card mb-3">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="/img/Arbol_Muestra.jpg" alt="..." height="230" width="230">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="font-weight-bold card-title">GENEALOGIA</h5>
+                        <p class="card-text">
+
+                            Consulta toda la información acerca de los antepasados y predecesores de las Ejemplares, analiza toda sus rama genealógica
+                            y decide cual será tu mejor opción.
+
+
+                        </p>
+                        <!--<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
+                    </div>
+                    <a href="/Cruces/Index" class="btn btn-primary">Consultar</a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>

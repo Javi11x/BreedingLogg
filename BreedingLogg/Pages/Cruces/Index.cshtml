@@ -1,0 +1,88 @@
+﻿@page
+@model BreedingLogg.Pages.Cruces.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<div class="text-center">
+    <h1 class="display-4">CRUCES</h1>
+    <p>Cruces Actuales</p>
+
+</div>
+
+<div>
+    <a asp-page="Create">Nuevo Cruce</a>
+
+</div>
+
+<div>
+    <br />
+</div>
+
+<div class="row">
+
+    @foreach (var item in Model.Cruce)
+    {
+    <div class="col mb-4">
+
+        <div class="item card" style="width:1170px;">
+            <!--NOMBRE DEL CRUCE-->
+            <h5 class="card-header font-weight-bold">@Html.DisplayFor(modelItem => item.NombreCria)</h5>
+
+            <div class="card-body">
+                <!--PADRE+MADRE-->
+                <div>
+                    <h5 class="card-title">@Html.DisplayFor(modelItem => item.EjemplarMacho.NombreEjemplarMacho) + @Html.DisplayFor(modelItem => item.EjemplarHembra.NombreEjemplarHembra)</h5>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm">
+                            <!--FECHAS-->
+                            <h6>Fecha de emparejamiento</h6>
+                            <p class="text-muted">@Html.DisplayFor(modelItem => item.FechaEmparejamientoCria)</p>
+                            <br />
+                            <h6>Fecha de Nacimiento</h6>
+                            <p class="text-muted">@Html.DisplayFor(modelItem => item.FechaNacimientoCria)</p>
+                        </div>
+                        <!--CRIAS-->
+                        <div class="col-sm">
+                            <p class="text-muted">Nacidas: @Html.DisplayFor(modelItem => item.CriasNacidas)</p>
+                            <p class="text-muted">Machos: @Html.DisplayFor(modelItem => item.CriasMachos)</p>
+                            <p class="text-muted">Hembras: @Html.DisplayFor(modelItem => item.CriasHembras)</p>
+                            <p class="text-muted">Fallecidas: @Html.DisplayFor(modelItem => item.CriasFallecidas)</p>
+                        </div>
+                        <!--ESTATUS-->
+                        <div class="col-sm">
+                            <h6 class="font-weight-bold">Estatus Actual</h6>
+                            <p class="text-muted">@Html.DisplayFor(modelItem => item.StatusCruce)</p>
+                        </div>
+                        <!--BOTONES-->
+                        <div class="col-sm">
+                            <a asp-page="./Edit" asp-route-id="@item.CruceId" type="button" class="btn btn-primary">Editar</a>
+                            <a asp-page="./Details" asp-route-id="@item.CruceId" type="button" class="btn btn-primary">Detalles</a>
+                            <a asp-page="./Delete" asp-route-id="@item.CruceId" type="button" class="btn btn-danger">Eliminar</a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <!--CRIADOR-->
+            <div class="card-footer">
+                <h6 class="text-muted">
+                    @Html.DisplayFor(modelItem => item.Criador.NombreCriador)
+                    @Html.DisplayFor(modelItem => item.Criador.ApellidosCriador)
+                </h6>
+            </div>
+
+
+        </div>
+
+    </div>
+    }
+
+</div>

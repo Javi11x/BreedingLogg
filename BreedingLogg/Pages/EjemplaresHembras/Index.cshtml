@@ -1,0 +1,67 @@
+﻿@page
+@model BreedingLogg.Pages.EjemplaresHembras.IndexModel
+
+@{ ViewData["Title"] = "Index"; }
+
+<div class="text-center">
+    <h1 class="display-4">CATALOGO HEMBRAS</h1>
+    <p>Vista de todas tus mascotas registradas</p>
+
+</div>
+
+<div>
+
+    <a asp-page="Create">Añadir Nuevo Ejemplar</a>
+
+</div>
+
+<div>
+    <br />
+</div>
+
+<div class="row">
+    @foreach (var item in Model.EjemplarHembra)
+    {<!--TARJETA COMPLETA-->
+                <div class="col mb-4">
+                    <div class="card item" style="width: 22rem;">
+
+                        <!--IMAGEN-->
+                        <img src="~/img/@Html.DisplayFor(modelItem => item.FotoEjemplarHembra)" class="card-img-top item-img" alt="..." height="286">
+
+                        <div class="card-body">
+
+                            <!--PEDIGREE-->
+                            <h5 class="card-title font-weight-bold">Pedigree: @Html.DisplayFor(modelItem => item.PedegreeEjemplarHembra)</h5>
+
+                            <!--RAZA/NOMBRE/COLOR-->
+                            <h6 class="card-title">@Html.DisplayFor(modelItem => item.RazaEjemplarHembra) | @Html.DisplayFor(modelItem => item.NombreEjemplarHembra) | @Html.DisplayFor(modelItem => item.ColorEjemplarHembra)</h6>
+
+                            <!--DESCRIPCION-->
+                            <p class="card-text ">@Html.DisplayFor(modelItem => item.DescripcionEjemplarHembra)</p>
+
+                        </div>
+
+                        <!--CRIADOR NOMBRE/APELLIDO-->
+                        <div class="card-header">
+                            @Html.DisplayFor(modelItem => item.Criador.NombreCriador) @Html.DisplayFor(modelItem => item.Criador.ApellidosCriador)
+                        </div>
+
+                        <ul class="list-group list-group-flush">
+                            <!--NACIMIENTO-->
+                            <li class="list-group-item text-muted">Nacimiento: @Html.DisplayFor(modelItem => item.FechaNacimientoEjemplarHembra)</li>
+                            <!--CIUDAD/ESTADO/CP-->
+                            <li class="list-group-item text-muted">@Html.DisplayFor(modelItem => item.Ciudad.NombreCiudad), @Html.DisplayFor(modelItem => item.Estado.NombreEstado) | @Html.DisplayFor(modelItem => item.CodigoPostalEjemplarHembra)</li>
+                        </ul>
+
+                        <div class=" card-footer CentrarBotones">
+                            <!--BOTONES PIE TARJETA-->
+                            <a asp-page="./Edit" asp-route-id="@item.EjemplarHembraId" type="button" class="btn btn-primary">Editar</a>
+                            <a asp-page="./Details" asp-route-id="@item.EjemplarHembraId" type="button" class="btn btn-primary">Detalles</a>
+                            <a asp-page="./Delete" asp-route-id="@item.EjemplarHembraId" type="button" class="btn btn-primary">Eliminar</a>
+                        </div>
+
+                    </div>
+                </div>
+      }
+
+</div>

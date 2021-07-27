@@ -1,0 +1,75 @@
+﻿@page
+@model BreedingLogg.Pages.Cruces.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="text-center">
+    <h1 class="display-4">ELIMINAR CRUCE</h1>
+    <p>¿Estas seguro que deseas eliminar el cruce?</p>
+
+</div>
+
+<div class="row">
+    <div class="col mb-4">
+
+        <div class="card" style="width:1170px;">
+
+            <h5 class="card-header font-weight-bold">@Html.DisplayFor(model => model.Cruce.NombreCria)</h5>
+
+            <div class="card-body">
+
+                <div>
+                    <h5 class="card-title">@Html.DisplayFor(model => model.Cruce.EjemplarMacho.NombreEjemplarMacho) + @Html.DisplayFor(model => model.Cruce.EjemplarHembra.NombreEjemplarHembra)</h5>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm">
+                            <h6>Fecha de emparejamiento</h6>
+                            <p class="text-muted">@Html.DisplayFor(model => model.Cruce.FechaEmparejamientoCria)</p>
+                            <br />
+                            <h6>Fecha de Nacimiento</h6>
+                            <p class="text-muted">@Html.DisplayFor(model => model.Cruce.FechaNacimientoCria)</p>
+                        </div>
+
+                        <div class="col-sm">
+                            <p class="text-muted">Nacidas: @Html.DisplayFor(model => model.Cruce.CriasNacidas)</p>
+                            <p class="text-muted">Machos: @Html.DisplayFor(model => model.Cruce.CriasMachos)</p>
+                            <p class="text-muted">Hembras: @Html.DisplayFor(model => model.Cruce.CriasHembras)</p>
+                            <p class="text-muted">Fallecidas: @Html.DisplayFor(model => model.Cruce.CriasFallecidas)</p>
+                        </div>
+
+                        <div class="col-sm">
+                            <h6 class="font-weight-bold">Estatus Actual</h6>
+                            <p class="text-muted">@Html.DisplayFor(model => model.Cruce.StatusCruce)</p>
+                        </div>
+
+                        <div class="col-sm">
+                            <form method="post">
+                                <input type="hidden" asp-for="Cruce.CruceId" />
+                                <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+                                <a asp-page="./Index"  type="button" class="btn btn-primary">Cancelar</a>
+                            </form>
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card-footer">
+                <h6 class="text-muted">
+                    @Html.DisplayFor(model => model.Cruce.Criador.NombreCriador)
+                    @Html.DisplayFor(model => model.Cruce.Criador.ApellidosCriador)
+                </h6>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,45 @@
+﻿@page
+@model BreedingLogg.Pages.cerrarsesionModel
+@{
+}
+
+<div>
+    &nbsp;
+    &nbsp;
+    &nbsp;
+</div>
+
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+
+        <div class="card">
+
+            <div class="card-header text-center font-weight-bold">
+                CERRANDO SESIÓN
+            </div>
+
+            <img class="card-img-top" src="/img/crying-cat.jpg" alt="Card image cap">
+
+            <div class="card-body">
+
+                <h5 class="card-title">¿Estas seguro?</h5>
+
+            </div>
+
+            <div class="text-center">
+                <div class="card-footer">
+
+                    <form method="post">
+                        <input type="submit" value="Si" class="btn btn-danger" asp-page-handler="Cerrar" />
+
+                        <input type="submit" value="No" class="btn btn-primary" asp-page-handler="Cancelar" />
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+

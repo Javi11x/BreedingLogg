@@ -1,0 +1,64 @@
+﻿@page
+@model BreedingLogg.Pages.EjemplaresHembras.DetailsModel
+
+@{ ViewData["Title"] = "Details"; }
+
+<div class="text-center">
+    <h1 class="display-4">DETALLES</h1>
+    <p>Detalles del Ejemplar</p>
+</div>
+
+<div>
+    <br />
+</div>
+
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+
+        <div class="card text-center">
+
+            <div class="card-header"><h5> @Html.DisplayFor(model => model.EjemplarHembra.NombreEjemplarHembra)</h5></div>
+
+            <img class="card-img-top" src="~/img/@Html.DisplayFor(model => model.EjemplarHembra.FotoEjemplarHembra)" alt="Card image cap">
+
+            <div class="card-body">
+
+                <h6 class="card-title text-muted">Raza: @Html.DisplayFor(model => model.EjemplarHembra.RazaEjemplarHembra)</h6>
+
+                <ul class="list-group list-group-flush">
+
+                    <li class="list-group-item text-muted">Estatus: @Html.DisplayFor(model => model.EjemplarHembra.StatusEjemplarHembra)</li>
+
+                    <li class="list-group-item text-muted">Pedigree: @Html.DisplayFor(model => model.EjemplarHembra.PedegreeEjemplarHembra)</li>
+
+                    <li class="list-group-item text-muted">Color: @Html.DisplayFor(model => model.EjemplarHembra.ColorEjemplarHembra)</li>
+
+                    <li class="list-group-item text-muted">Género: @Html.DisplayFor(model => model.EjemplarHembra.GeneroEjemplarHembra)</li>
+
+                    <li class="list-group-item text-muted">Variedad: @Html.DisplayFor(model => model.EjemplarHembra.VariedadEjemplarHembra)</li>
+
+                    <li class="list-group-item text-muted">Fecha Nacimiento: @Html.DisplayFor(model => model.EjemplarHembra.FechaNacimientoEjemplarHembra)</li>
+
+                    <li class="list-group-item text-muted">Ubicación: @Html.DisplayFor(model => model.EjemplarHembra.Ciudad.NombreCiudad), @Html.DisplayFor(model => model.EjemplarHembra.Estado.NombreEstado) |  @Html.DisplayFor(model => model.EjemplarHembra.CodigoPostalEjemplarHembra)</li>
+
+                </ul>
+
+                <br />
+                <h6 class="font-weight-bold">Descripción:</h6>
+                <p class="card-text">@Html.DisplayFor(model => model.EjemplarHembra.DescripcionEjemplarHembra)</p>
+
+            </div>
+
+            <div class="card-footer text-muted">
+                @Html.DisplayFor(model => model.EjemplarHembra.Criador.NombreCriador)
+                @Html.DisplayFor(model => model.EjemplarHembra.Criador.ApellidosCriador)
+            </div>
+
+            <div class="card-footer CentrarBtn">
+                <a type="button" class="btn btn-primary" asp-page="./Edit" asp-route-id="@Model.EjemplarHembra.EjemplarHembraId">Editar</a> |
+                <a type="button" class="btn btn-primary" asp-page="./Index">Regresar</a>
+            </div>
+
+        </div>
+    </div>
+</div>

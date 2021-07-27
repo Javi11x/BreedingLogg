@@ -1,0 +1,76 @@
+﻿@page
+@model BreedingLogg.Pages.EjemplaresHembras.DeleteModel
+
+@{ ViewData["Title"] = "Delete"; }
+
+<div class="text-center">
+    <h1 class="display-4">ELIMINAR</h1>
+    <p>¿Seguro que deseas eliminar el ejemplar?</p>
+
+</div>
+
+<div>
+    &nbsp;
+</div>
+
+<div class="row">
+
+    <div class="col-md-6 offset-md-3">
+
+        <!--TARJETA COMPLETA-->
+        <div class="col mb-4">
+
+            <div class="card item" style="width: 30rem;">
+
+                <!--IMAGEN-->
+                <img src="~/img/@Html.DisplayFor(model => model.EjemplarHembra.FotoEjemplarHembra)" class="card-img-top item-img" alt="..." height="286">
+
+                <div class="card-body">
+
+                    <!--PEDIGREE-->
+                    <h5 class="card-title font-weight-bold">Pedigree: @Html.DisplayFor(model => model.EjemplarHembra.PedegreeEjemplarHembra)</h5>
+
+                    <!--RAZA/NOMBRE/COLOR-->
+                    <h6 class="card-title">@Html.DisplayFor(model => model.EjemplarHembra.RazaEjemplarHembra) | @Html.DisplayFor(model => model.EjemplarHembra.NombreEjemplarHembra) |  @Html.DisplayFor(model => model.EjemplarHembra.ColorEjemplarHembra)</h6>
+
+                    <!--DESCRIPCION-->
+                    <p class="card-text ">@Html.DisplayFor(model => model.EjemplarHembra.DescripcionEjemplarHembra)</p>
+
+                </div>
+
+
+                <!--CRIADOR NOMBRE/APELLIDO-->
+                <div class="card-header">
+                    @Html.DisplayFor(model => model.EjemplarHembra.Criador.NombreCriador) @Html.DisplayFor(model => model.EjemplarHembra.Criador.ApellidosCriador)
+                </div>
+
+                <ul class="list-group list-group-flush">
+                    <!--NACIMIENTO-->
+                    <li class="list-group-item text-muted">Nacimiento: @Html.DisplayFor(model => model.EjemplarHembra.FechaNacimientoEjemplarHembra)</li>
+                    <!--CIUDAD/ESTADO/CP-->
+                    <li class="list-group-item text-muted">@Html.DisplayFor(model => model.EjemplarHembra.Ciudad.NombreCiudad), @Html.DisplayFor(model => model.EjemplarHembra.CodigoPostalEjemplarHembra)</li>
+                </ul>
+
+                <form method="post">
+                    <div class=" card-footer CentrarBotones">
+                        <!--BOTONES PIE TARJETA-->
+                        <input type="hidden" asp-for="EjemplarHembra.EjemplarHembraId" />
+
+                        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+
+
+                        <a asp-page="./Index" type="button" class="btn btn-primary">Cancelar</a>
+                    </div>
+
+                </form>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+</div>

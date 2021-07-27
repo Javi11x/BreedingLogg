@@ -1,0 +1,65 @@
+﻿@page
+@model BreedingLogg.Pages.EjemplaresMachos.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="text-center">
+    <h1 class="display-4">DETALLES</h1>
+    <p>Detalles del Ejemplar</p>
+</div>
+
+<div>
+    <br />
+</div>
+
+<div class="row">
+
+    <div class="" col-md-6 offset-md-3"">
+        <!--TARJETA COMPLETA-->
+        <div class="col mb-4">
+            <div class="card" style="width: 30rem;">
+
+                <!--IMAGEN-->
+                <img src="~/img/@Html.DisplayFor(model => model.EjemplarMacho.FotoEjemplarMacho)" class="card-img-top item-img" alt="..." height="286">
+
+                <div class="card-body">
+
+                    <!--PEDIGREE-->
+                    <h5 class="card-title font-weight-bold">Pedigree: @Html.DisplayFor(model => model.EjemplarMacho.PedegreeEjemplarMacho)</h5>
+
+                    <!--RAZA/NOMBRE/COLOR-->
+                    <h6 class="card-title">@Html.DisplayFor(model => model.EjemplarMacho.RazaEjemplarMacho) | @Html.DisplayFor(model => model.EjemplarMacho.NombreEjemplarMacho) | @Html.DisplayFor(model => model.EjemplarMacho.ColorEjemplarMacho)</h6>
+
+                    <!--DESCRIPCION-->
+                    <p class="card-text ">@Html.DisplayFor(model => model.EjemplarMacho.DescripcionEjemplarMacho)</p>
+
+                </div>
+
+                <!--CRIADOR NOMBRE/APELLIDO-->
+                <div class="card-header">
+                    @Html.DisplayFor(model => model.EjemplarMacho.Criador.NombreCriador) @Html.DisplayFor(model => model.EjemplarMacho.Criador.ApellidosCriador)
+                </div>
+
+                <ul class="list-group list-group-flush">
+                    <!--NACIMIENTO-->
+                    <li class="list-group-item text-muted">Nacimiento: @Html.DisplayFor(model => model.EjemplarMacho.FechaNacimientoEjemplarMacho)</li>
+                    <!--CIUDAD/ESTADO/CP-->
+                    <li class="list-group-item text-muted">@Html.DisplayFor(model => model.EjemplarMacho.Ciudad.NombreCiudad), @Html.DisplayFor(model => model.EjemplarMacho.CodigoPostalEjemplarMacho)</li>
+                </ul>
+
+                <form method="post">
+                    <div class=" card-footer CentrarBotones">
+                        <!--BOTONES PIE TARJETA-->
+                        <input type="hidden" asp-for="EjemplarMacho.EjemplarMachoId" />
+                        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+                        <a asp-page="./Index" type="button" class="btn btn-primary">Cancelar</a>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+</div>

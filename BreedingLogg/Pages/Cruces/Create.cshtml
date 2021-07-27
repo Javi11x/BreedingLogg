@@ -1,0 +1,138 @@
+﻿@page
+@model BreedingLogg.Pages.Cruces.CreateModel
+
+@{ ViewData["Title"] = "Create"; }
+
+<div class="text-center">
+    <h1 class="display-4">ALTA CRUCES</h1>
+    <p>Registro de Cruces</p>
+</div>
+
+<div>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-page="/Index">Inicio</a></li>
+            <li class="breadcrumb-item"><a asp-page="/Cruces/Index">Cruces</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Alta de Cruces</li>
+        </ol>
+    </nav>
+</div>
+
+<div class="container">
+
+    <form method="post" enctype="multipart/form-data">
+
+
+        <div class="row align-items-center">
+            <div class="col">
+                <div class="form-group">
+                    <label class="control-label">Nombre del cruce</label>
+                    <input asp-for="Cruce.NombreCria" class="form-control" />
+                    <span asp-validation-for="Cruce.NombreCria" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="Cruce.EjemplarMachoId" class="control-label"></label>
+                    <select asp-for="Cruce.EjemplarMachoId" class="form-control" asp-items="ViewBag.EjemplarMachoId"></select>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="Cruce.EjemplarHembraId" class="control-label"></label>
+                    <select asp-for="Cruce.EjemplarHembraId" class="form-control" asp-items="ViewBag.EjemplarHembraId"></select>
+                </div>
+            </div>
+        </div>
+
+        <div class="row align-items-center">
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="Cruce.FechaEmparejamientoCria" class="control-label"></label>
+                    <input asp-for="Cruce.FechaEmparejamientoCria" class="form-control" />
+                    <span asp-validation-for="Cruce.FechaEmparejamientoCria" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="Cruce.FechaNacimientoCria" class="control-label"></label>
+                    <input asp-for="Cruce.FechaNacimientoCria" class="form-control" />
+                    <span asp-validation-for="Cruce.FechaNacimientoCria" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="Cruce.CriasNacidas" class="control-label"></label>
+                    <input asp-for="Cruce.CriasNacidas" class="form-control" />
+                    <span asp-validation-for="Cruce.CriasNacidas" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row align-items-center">
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="Cruce.CriasMachos" class="control-label"></label>
+                    <input asp-for="Cruce.CriasMachos" class="form-control" />
+                    <span asp-validation-for="Cruce.CriasMachos" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="Cruce.CriasHembras" class="control-label"></label>
+                    <input asp-for="Cruce.CriasHembras" class="form-control" />
+                    <span asp-validation-for="Cruce.CriasHembras" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="Cruce.CriasFallecidas" class="control-label"></label>
+                    <input asp-for="Cruce.CriasFallecidas" class="form-control" />
+                    <span asp-validation-for="Cruce.CriasFallecidas" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row align-items-center">
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="Cruce.CriadorId" class="control-label"></label>
+                    <select asp-for="Cruce.CriadorId" class="form-control" asp-items="ViewBag.CriadorId"></select>
+
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="Cruce.StatusCruce" class="control-label"></label>
+                    <select asp-for="Cruce.StatusCruce" class="form-control">
+                        <option>Enable</option>
+                    </select>
+                    <span asp-validation-for="Cruce.StatusCruce" class="text-danger"></span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Crear" class="btn btn-primary" />
+        </div>
+
+    </form>
+
+</div>
+
+<div>
+    <a asp-page="Index">Regresar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

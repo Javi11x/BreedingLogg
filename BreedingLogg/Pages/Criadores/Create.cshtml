@@ -1,0 +1,174 @@
+﻿@page
+@model BreedingLogg.Pages.Criadores.CreateModel
+
+@{ ViewData["Title"] = "Create"; }
+
+<div class="text-center">
+    <h1 class="display-4">ALTA DE CRIADORES</h1>
+    <p>Registro de Criadores</p>
+</div>
+
+<div>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-page="/Index">Inicio</a></li>
+            <li class="breadcrumb-item"><a asp-page="/Criadores/Index">Criadores</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Alta de Criadores</li>
+        </ol>
+    </nav>
+</div>
+
+<div class="container">
+
+    <form method="post" enctype="multipart/form-data">
+
+        <div class="row align-items-start">
+            <div class="col">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group">
+                    <label asp-for="Criador.FotoCriador" class="control-label"></label>
+                    <input type="file" name="archivo" asp-for="Criador.FotoCriador" class="form-control" />
+                    <span asp-validation-for="Criador.FotoCriador" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col">
+
+            </div>
+            <div class="col">
+
+            </div>
+        </div>
+
+        <div class="row align-items-start">
+            <div class="col">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group">
+                    <label asp-for="Criador.FotoCriadero" class="control-label"></label>
+                    <input type="file" name="archivo2" asp-for="Criador.FotoCriadero" class="form-control" />
+                    <span asp-validation-for="Criador.FotoCriadero" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col">
+
+            </div>
+            <div class="col">
+
+            </div>
+        </div>
+
+
+        <div class="row align-items-center">
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="Criador.NombreCriador" class="control-label"></label>
+                    <input asp-for="Criador.NombreCriador" class="form-control" />
+                    <span asp-validation-for="Criador.NombreCriador" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="Criador.ApellidosCriador" class="control-label"></label>
+                    <input asp-for="Criador.ApellidosCriador" class="form-control" />
+                    <span asp-validation-for="Criador.ApellidosCriador" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="Criador.CorreoC" class="control-label"></label>
+                    <input asp-for="Criador.CorreoC" class="form-control" />
+                    <span asp-validation-for="Criador.CorreoC" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row align-items-center">
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="Criador.DireccionCriadero" class="control-label"></label>
+                    <input asp-for="Criador.DireccionCriadero" class="form-control" />
+                    <span asp-validation-for="Criador.DireccionCriadero" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="Criador.EspecieQC" class="control-label"></label>
+                    <input asp-for="Criador.EspecieQC" class="form-control" />
+                    <span asp-validation-for="Criador.EspecieQC" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="Criador.RedSocialC" class="control-label"></label>
+                    <input type="url" asp-for="Criador.RedSocialC" class="form-control" />
+                    <span asp-validation-for="Criador.RedSocialC" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row align-items-center">
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="Criador.UsuarioCriador" class="control-label"></label>
+                    <input asp-for="Criador.UsuarioCriador" class="form-control" />
+                    <span asp-validation-for="Criador.UsuarioCriador" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="Criador.ContraseñaCriador" class="control-label"></label>
+                    <input type="password" asp-for="Criador.ContraseñaCriador" class="form-control" />
+                    <span asp-validation-for="Criador.ContraseñaCriador" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="Criador.NivelCriador" class="control-label"></label>
+                    <select asp-for="Criador.NivelCriador" class="form-control">
+                        <option selected disabled value="">Selecciona un nivel</option>
+                        <option>Criador</option>
+                    </select>
+                    <span asp-validation-for="Criador.NivelCriador" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row align-items-center">
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="Criador.StatusCriador" class="control-label"></label>
+                    <select asp-for="Criador.StatusCriador" class="form-control">
+                        <option selected disabled value="">Selecciona un nivel</option>
+                        <option>Enable</option>
+                    </select>
+                    <span asp-validation-for="Criador.StatusCriador" class="text-danger"></span>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="form-group">
+            <input type="submit" value="Create" class="btn btn-primary" />
+        </div>
+
+    </form>
+
+
+</div>
+
+<div>
+    <a asp-page="Index">Regresar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

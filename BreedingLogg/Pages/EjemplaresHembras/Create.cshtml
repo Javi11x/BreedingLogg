@@ -1,0 +1,510 @@
+﻿@page
+@model BreedingLogg.Pages.EjemplaresHembras.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="text-center">
+    <h1 class="display-4">ALTA EJEMPLARES</h1>
+    <p>Registro de Ejemplares</p>
+</div>
+
+<div>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-page="/Index">Inicio</a></li>
+            <li class="breadcrumb-item"><a asp-page="/EjemplaresHembras/Index">Ejemplares Hembras</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Alta de Hembras</li>
+        </ol>
+    </nav>
+</div>
+
+<div class="container">
+
+    <form method="post" enctype="multipart/form-data">
+
+        <div class="row align-items-start">
+            <div class="col">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group">
+                    <label asp-for="EjemplarHembra.FotoEjemplarHembra" class="control-label"></label>
+                    <input type="file" name="archivo3" asp-for="EjemplarHembra.FotoEjemplarHembra" class="form-control" />
+                    <span asp-validation-for="EjemplarHembra.FotoEjemplarHembra" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col">
+
+            </div>
+            <div class="col">
+
+            </div>
+        </div>
+
+        <div class="row align-items-center">
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="EjemplarHembra.NombreEjemplarHembra" class="control-label"></label>
+                    <input asp-for="EjemplarHembra.NombreEjemplarHembra" class="form-control" />
+                    <span asp-validation-for="EjemplarHembra.NombreEjemplarHembra" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="EjemplarHembra.CriadorId" class="control-label"></label>
+                    <select asp-for="EjemplarHembra.CriadorId" class="form-control" asp-items="ViewBag.CriadorId">
+                        <option selected disabled value="">Seleccione Criador</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="EjemplarHembra.EstadoId" class="control-label"></label>
+                    <select asp-for="EjemplarHembra.EstadoId" class="form-control" asp-items="ViewBag.EstadoId">
+                        <option selected disabled value="">Seleccione su Estado</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row align-items-center">
+
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="EjemplarHembra.CiudadId" class="control-label"></label>
+                    <select asp-for="EjemplarHembra.CiudadId" class="form-control" asp-items="ViewBag.CiudadId">
+                        <option selected disabled value="">Seleccione su Ciudad</option>
+                    </select>
+
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="EjemplarHembra.CodigoPostalEjemplarHembra" class="control-label"></label>
+                    <input asp-for="EjemplarHembra.CodigoPostalEjemplarHembra" class="form-control" />
+                    <span asp-validation-for="EjemplarHembra.CodigoPostalEjemplarHembra" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="EjemplarHembra.RazaEjemplarHembra" class="control-label"></label>
+                    <select asp-for="EjemplarHembra.RazaEjemplarHembra" class="form-control">
+                        <option selected disabled value="">Selecciona la Raza</option>
+                        <option>	Affenpinscher	</option>
+                        <option>	Airedale terrier	</option>
+                        <option>	Akita	</option>
+                        <option>	Akita americano	</option>
+                        <option>	Alaskan Husky	</option>
+                        <option>	Alaskan malamute	</option>
+                        <option>	American Foxhound	</option>
+                        <option>	American pit bull terrier	</option>
+                        <option>	American staffordshire terrier	</option>
+                        <option>	Ariegeois	</option>
+                        <option>	Artois	</option>
+                        <option>	Australian silky terrier	</option>
+                        <option>	Australian Terrier	</option>
+                        <option>	Austrian Black & Tan Hound	</option>
+                        <option>	Azawakh	</option>
+                        <option>	Balkan Hound	</option>
+                        <option>	Basenji	</option>
+                        <option>	Basset Alpino (Alpine Dachsbracke)	</option>
+                        <option>	Basset Artesiano Normando	</option>
+                        <option>	Basset Azul de Gascuña (Basset Bleu de Gascogne)	</option>
+                        <option>	Basset de Artois	</option>
+                        <option>	Basset de Westphalie	</option>
+                        <option>	Basset Hound	</option>
+                        <option>	Basset Leonado de Bretaña (Basset fauve de Bretagne)	</option>
+                        <option>	Bavarian Mountain Scenthound	</option>
+                        <option>	Beagle	</option>
+                        <option>	Beagle Harrier	</option>
+                        <option>	Beauceron	</option>
+                        <option>	Bedlington Terrier	</option>
+                        <option>	Bichon Boloñes	</option>
+                        <option>	Bichón Frisé	</option>
+                        <option>	Bichón Habanero	</option>
+                        <option>	Billy	</option>
+                        <option>	Black and Tan Coonhound	</option>
+                        <option>	Bloodhound (Sabueso de San Huberto)	</option>
+                        <option>	Bobtail	</option>
+                        <option>	Boerboel	</option>
+                        <option>	Border Collie	</option>
+                        <option>	Border terrier	</option>
+                        <option>	Borzoi	</option>
+                        <option>	Bosnian Hound	</option>
+                        <option>	Boston terrier	</option>
+                        <option>	Bouvier des Flandres	</option>
+                        <option>	Boxer	</option>
+                        <option>	Boyero de Appenzell	</option>
+                        <option>	Boyero de Australia	</option>
+                        <option>	Boyero de Entlebuch	</option>
+                        <option>	Boyero de las Ardenas	</option>
+                        <option>	Boyero de Montaña Bernes	</option>
+                        <option>	Braco Alemán de pelo corto	</option>
+                        <option>	Braco Alemán de pelo duro	</option>
+                        <option>	Braco de Ariege	</option>
+                        <option>	Braco de Auvernia	</option>
+                        <option>	Braco de Bourbonnais	</option>
+                        <option>	Braco de Saint Germain	</option>
+                        <option>	Braco Dupuy	</option>
+                        <option>	Braco Francés	</option>
+                        <option>	Braco Italiano	</option>
+                        <option>	Broholmer	</option>
+                        <option>	Buhund Noruego	</option>
+                        <option>	Bull terrier	</option>
+                        <option>	Bulldog americano	</option>
+                        <option>	Bulldog inglés	</option>
+                        <option>	Bulldog francés	</option>
+                        <option>	Bullmastiff	</option>
+                        <option>	Ca de Bestiar	</option>
+                        <option>	Cairn terrier	</option>
+                        <option>	Cane Corso	</option>
+                        <option>	Cane da Pastore Maremmano-Abruzzese	</option>
+                        <option>	Caniche (Poodle)	</option>
+                        <option>	Caniche Toy (Toy Poodle)	</option>
+                        <option>	Cao da Serra de Aires	</option>
+                        <option>	Cao da Serra de Estrela	</option>
+                        <option>	Cao de Castro Laboreiro	</option>
+                        <option>	Cao de Fila de Sao Miguel	</option>
+                        <option>	Cavalier King Charles Spaniel	</option>
+                        <option>	Cesky Fousek	</option>
+                        <option>	Cesky Terrier	</option>
+                        <option>	Chesapeake Bay Retriever	</option>
+                        <option>	Chihuahua	</option>
+                        <option>	Chin	</option>
+                        <option>	Chow Chow	</option>
+                        <option>	Cirneco del Etna	</option>
+                        <option>	Clumber Spaniel	</option>
+                        <option>	Cocker Spaniel Americano	</option>
+                        <option>	Cocker Spaniel Inglés	</option>
+                        <option>	Collie Barbudo	</option>
+                        <option>	Collie de Pelo Corto	</option>
+                        <option>	Collie de Pelo Largo	</option>
+                        <option>	Cotón de Tuléar	</option>
+                        <option>	Curly Coated Retriever	</option>
+                        <option>	Dálmata	</option>
+                        <option>	Dandie dinmont terrier	</option>
+                        <option>	Deerhound	</option>
+                        <option>	Dobermann	</option>
+                        <option>	Dogo Argentino	</option>
+                        <option>	Dogo de Burdeos	</option>
+                        <option>	Dogo del Tibet	</option>
+                        <option>	Drentse Partridge Dog	</option>
+                        <option>	Drever	</option>
+                        <option>	Dunker	</option>
+                        <option>	Elkhound Noruego	</option>
+                        <option>	Elkhound Sueco	</option>
+                        <option>	English Foxhound	</option>
+                        <option>	English Springer Spaniel	</option>
+                        <option>	English Toy Terrier	</option>
+                        <option>	Epagneul Picard	</option>
+                        <option>	Eurasier	</option>
+                        <option>	Fila Brasileiro	</option>
+                        <option>	Finnish Lapphound	</option>
+                        <option>	Flat Coated Retriever	</option>
+                        <option>	Fox terrier de pelo de alambre	</option>
+                        <option>	Fox terrier de pelo liso	</option>
+                        <option>	Foxhound Inglés	</option>
+                        <option>	Frisian Pointer	</option>
+                        <option>	Galgo Español	</option>
+                        <option>	Galgo húngaro (Magyar Agar)	</option>
+                        <option>	Galgo Italiano	</option>
+                        <option>	Galgo Polaco (Chart Polski)	</option>
+                        <option>	Glen of Imaal Terrier	</option>
+                        <option>	Golden Retriever	</option>
+                        <option>	Gordon Setter	</option>
+                        <option>	Gos d'Atura Catalá	</option>
+                        <option>	Gran Basset Griffon Vendeano	</option>
+                        <option>	Gran Boyero Suizo	</option>
+                        <option>	Gran Danés (Dogo Aleman)	</option>
+                        <option>	Gran Gascón Saintongeois	</option>
+                        <option>	Gran Griffon Vendeano	</option>
+                        <option>	Gran Munsterlander	</option>
+                        <option>	Gran Perro Japonés	</option>
+                        <option>	Grand Anglo Francais Tricoleur	</option>
+                        <option>	Grand Bleu de Gascogne	</option>
+                        <option>	Greyhound	</option>
+                        <option>	Griffon Bleu de Gascogne	</option>
+                        <option>	Griffon de pelo duro (Grifón Korthals)	</option>
+                        <option>	Griffon leonado de Bretaña	</option>
+                        <option>	Griffon Nivernais	</option>
+                        <option>	Grifon Belga	</option>
+                        <option>	Grifón de Bruselas	</option>
+                        <option>	Haldenstoever	</option>
+                        <option>	Harrier	</option>
+                        <option>	Hokkaido	</option>
+                        <option>	Hovawart	</option>
+                        <option>	Husky Siberiano (Siberian Husky)	</option>
+                        <option>	Ioujnorousskaia Ovtcharka	</option>
+                        <option>	Irish Glen of Imaal terrier	</option>
+                        <option>	Irish soft coated wheaten terrier	</option>
+                        <option>	Irish terrier	</option>
+                        <option>	Irish Water Spaniel	</option>
+                        <option>	Irish Wolfhound	</option>
+                        <option>	Jack Russell terrier	</option>
+                        <option>	Jindo Coreano	</option>
+                        <option>	Kai	</option>
+                        <option>	Keeshond	</option>
+                        <option>	Kelpie australiano (Australian kelpie)	</option>
+                        <option>	Kerry blue terrier	</option>
+                        <option>	King Charles Spaniel	</option>
+                        <option>	Kishu	</option>
+                        <option>	Komondor	</option>
+                        <option>	Kooiker	</option>
+                        <option>	Kromfohrländer	</option>
+                        <option>	Kuvasz	</option>
+                        <option>	Labrador Retriever	</option>
+                        <option>	Lagotto Romagnolo	</option>
+                        <option>	Laika de Siberia Occidental	</option>
+                        <option>	Laika de Siberia Oriental	</option>
+                        <option>	Laika Ruso Europeo	</option>
+                        <option>	Lakeland terrier	</option>
+                        <option>	Landseer	</option>
+                        <option>	Lapphund Sueco	</option>
+                        <option>	Lebrel Afgano	</option>
+                        <option>	Lebrel Arabe (Sloughi)	</option>
+                        <option>	Leonberger	</option>
+                        <option>	Lhasa Apso	</option>
+                        <option>	Lowchen (Pequeño Perro León)	</option>
+                        <option>	Lundehund Noruego	</option>
+                        <option>	Malamute de Alaska	</option>
+                        <option>	Maltés	</option>
+                        <option>	Manchester terrier	</option>
+                        <option>	Mastiff	</option>
+                        <option>	Mastín de los Pirineos	</option>
+                        <option>	Mastín Español	</option>
+                        <option>	Mastín Napolitano	</option>
+                        <option>	Mudi	</option>
+                        <option>	Norfolk terrier	</option>
+                        <option>	Norwich terrier	</option>
+                        <option>	Nova Scotia duck tolling retriever	</option>
+                        <option>	Ovejero alemán	</option>
+                        <option>	Otterhound	</option>
+                        <option>	Rafeiro do Alentejo	</option>
+                        <option>	Ratonero Bodeguero Andaluz	</option>
+                        <option>	Retriever de Nueva Escocia	</option>
+                        <option>	Rhodesian Ridgeback	</option>
+                        <option>	Ridgeback de Tailandia	</option>
+                        <option>	Rottweiler	</option>
+                        <option>	Saarloos	</option>
+                        <option>	Sabueso de Hamilton	</option>
+                        <option>	Sabueso de Hannover	</option>
+                        <option>	Sabueso de Hygen	</option>
+                        <option>	Sabueso de Istria	</option>
+                        <option>	Sabueso de Posavaz	</option>
+                        <option>	Sabueso de Schiller (Schillerstovare)	</option>
+                        <option>	Sabueso de Smaland (Smalandsstovare)	</option>
+                        <option>	Sabueso de Transilvania	</option>
+                        <option>	Sabueso del Tirol	</option>
+                        <option>	Sabueso Español	</option>
+                        <option>	Sabueso Estirio de pelo duro	</option>
+                        <option>	Sabueso Finlandés	</option>
+                        <option>	Sabueso Francés blanco y negro	</option>
+                        <option>	Sabueso Francés tricolor	</option>
+                        <option>	Sabueso Griego	</option>
+                        <option>	Sabueso Polaco (Ogar Polski)	</option>
+                        <option>	Sabueso Serbio	</option>
+                        <option>	Sabueso Suizo	</option>
+                        <option>	Sabueso Yugoslavo de Montaña	</option>
+                        <option>	Sabueso Yugoslavo tricolor	</option>
+                        <option>	Saluki	</option>
+                        <option>	Samoyedo	</option>
+                        <option>	San Bernardo	</option>
+                        <option>	Sarplaninac	</option>
+                        <option>	Schapendoes	</option>
+                        <option>	Schipperke	</option>
+                        <option>	Schnauzer estándar	</option>
+                        <option>	Schnauzer gigante (Riesenschnauzer)	</option>
+                        <option>	Schnauzer miniatura (Zwergschnauzer)	</option>
+                        <option>	Scottish terrier	</option>
+                        <option>	Sealyham terrier	</option>
+                        <option>	Segugio Italiano	</option>
+                        <option>	Seppala Siberiano	</option>
+                        <option>	Setter Inglés	</option>
+                        <option>	Setter Irlandés	</option>
+                        <option>	Setter Irlandés rojo y blanco	</option>
+                        <option>	Shar Pei	</option>
+                        <option>	Shiba Inu	</option>
+                        <option>	Shih Tzu	</option>
+                        <option>	Shikoku	</option>
+                        <option>	Skye terrier	</option>
+                        <option>	Slovensky Cuvac	</option>
+                        <option>	Slovensky Kopov	</option>
+                        <option>	Smoushond Holandés	</option>
+                        <option>	Spaniel Alemán (German Wachtelhund)	</option>
+                        <option>	Spaniel Azul de Picardía	</option>
+                        <option>	Spaniel Bretón	</option>
+                        <option>	Spaniel de Campo	</option>
+                        <option>	Spaniel de Pont Audemer	</option>
+                        <option>	Spaniel Francés	</option>
+                        <option>	Spaniel Tibetano	</option>
+                        <option>	Spinone Italiano	</option>
+                        <option>	Spítz Alemán	</option>
+                        <option>	Spitz de Norbotten (Norbottenspets)	</option>
+                        <option>	Spitz Finlandés	</option>
+                        <option>	Spitz Japonés	</option>
+                        <option>	Staffordshire bull terrier	</option>
+                        <option>	Staffordshire terrier americano	</option>
+                        <option>	Sussex Spaniel	</option>
+                        <option>	Teckel (Dachshund)	</option>
+                        <option>	Tchuvatch eslovaco	</option>
+                        <option>	Terranova (Newfoundland)	</option>
+                        <option>	Terrier australiano (Australian terrier)	</option>
+                        <option>	Terrier brasilero	</option>
+                        <option>	Terrier cazador alemán	</option>
+                        <option>	Terrier checo (Ceský teriér)	</option>
+                        <option>	Terrier galés	</option>
+                        <option>	Terrier irlandés (Irish terrier)	</option>
+                        <option>	Terrier japonés (Nihon teria)	</option>
+                        <option>	Terrier negro ruso	</option>
+                        <option>	Terrier tibetano	</option>
+                        <option>	Tosa	</option>
+                        <option>	Viejo Pastor Inglés	</option>
+                        <option>	Viejo Pointer Danés (Old Danish Pointer)	</option>
+                        <option>	Vizsla	</option>
+                        <option>	Volpino Italiano	</option>
+                        <option>	Weimaraner	</option>
+                        <option>	Welsh springer spaniel	</option>
+                        <option>	Welsh Corgi Cardigan	</option>
+                        <option>	Welsh Corgi Pembroke	</option>
+                        <option>	Welsh terrier	</option>
+                        <option>	West highland white terrier	</option>
+                        <option>	Whippet	</option>
+                        <option>	Wirehaired solvakian pointer	</option>
+                        <option>	Xoloitzcuintle	</option>
+                        <option>	Yorkshire Terrier	</option>
+                        <option>    Otro (especificar en la descripción) </option>
+                    </select>
+                    <span asp-validation-for="EjemplarHembra.RazaEjemplarHembra" class="text-danger"></span>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="row align-items-center">
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="EjemplarHembra.ColorEjemplarHembra" class="control-label"></label>
+                    <select asp-for="EjemplarHembra.ColorEjemplarHembra" class="form-control">
+                        <option selected disabled value="">Seleccione Color</option>
+                        <option>	Tricolor	</option>
+                        <option>	Bicolor	</option>
+                        <option>	Salpicado	</option>
+                        <option>	Esmoquin (marca irlandesa)	</option>
+                        <option>	Mirlo o merle	</option>
+                        <option>	Atigrado	</option>
+                        <option>	Sable	</option>
+                        <option>	Chihuahua negro	</option>
+                        <option>	Negro y bronceado	</option>
+                        <option>	Negro y bronceado con marcas blancas	</option>
+                        <option>	Negro y blanco	</option>
+                        <option>	Negro sobre blanco	</option>
+                        <option>	Chihuahua chocolate	</option>
+                        <option>	Chocolate y bronceado	</option>
+                        <option>	Chocolate y bronceado con marcas blancas:	</option>
+                        <option>	Chocolate y blanco	</option>
+                        <option>	Chocolate sobre blanco	</option>
+                        <option>	Chihuahua cervatillo / pardo claro	</option>
+                        <option>	Crema	</option>
+                        <option>	Cervatillo	</option>
+                        <option>	Dorado	</option>
+                        <option>	Rojo o caoba	</option>
+                        <option>	Cervatillo con blanco	</option>
+                        <option>	Cervatillo sobre blanco	</option>
+                        <option>	Chihuahua blanco	</option>
+                        <option>	Blanco- beige	</option>
+                        <option>	Blanco-crema	</option>
+                        <option>	Blanco-dorado	</option>
+                        <option>	Blanco-rojo	</option>
+                        <option>	Chihuahua azul	</option>
+                        <option>	Azul y tostado	</option>
+                        <option>	Azul y blanco	</option>
+                        <option>	Azul y tostado con blanco	</option>
+                        <option>    Otro (especificar en la descripción)</option>
+                    </select>
+                    <span asp-validation-for="EjemplarHembra.ColorEjemplarHembra" class="text-danger"></span>
+                </div>
+
+            </div>
+
+
+
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="EjemplarHembra.FechaNacimientoEjemplarHembra" class="control-label"></label>
+                    <input asp-for="EjemplarHembra.FechaNacimientoEjemplarHembra" class="form-control" />
+                    <span asp-validation-for="EjemplarHembra.FechaNacimientoEjemplarHembra" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="EjemplarHembra.VariedadEjemplarHembra" class="control-label"></label>
+                    <input asp-for="EjemplarHembra.VariedadEjemplarHembra" class="form-control" />
+                    <span asp-validation-for="EjemplarHembra.VariedadEjemplarHembra" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row align-items-center">
+
+            <div class="col">
+                <label asp-for="EjemplarHembra.PedegreeEjemplarHembra" class="control-label"></label>
+                <input asp-for="EjemplarHembra.PedegreeEjemplarHembra" class="form-control" />
+                <span asp-validation-for="EjemplarHembra.PedegreeEjemplarHembra" class="text-danger"></span>
+            </div>
+
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="EjemplarHembra.GeneroEjemplarHembra" class="control-label"></label>
+                    <select asp-for="EjemplarHembra.GeneroEjemplarHembra" class="form-control">
+                        <option>Hembra</option>
+                    </select>
+                    <span asp-validation-for="EjemplarHembra.GeneroEjemplarHembra" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="EjemplarHembra.StatusEjemplarHembra" class="control-label"></label>
+                    <select asp-for="EjemplarHembra.StatusEjemplarHembra" class="form-control">
+                        <option>Enable</option>
+                    </select>
+                    <span asp-validation-for="EjemplarHembra.StatusEjemplarHembra" class="text-danger"></span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row align-items-end">
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="EjemplarHembra.DescripcionEjemplarHembra" class="control-label"></label>
+                    <input asp-for="EjemplarHembra.DescripcionEjemplarHembra" class="form-control" />
+                    <span asp-validation-for="EjemplarHembra.DescripcionEjemplarHembra" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Create" class="btn btn-primary" />
+        </div>
+
+    </form>
+
+
+</div>
+
+<div>
+    <a asp-page="Index">Regresar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

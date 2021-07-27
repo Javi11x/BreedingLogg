@@ -1,0 +1,249 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - BreedingLogg</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/Index.css" />
+    <link rel="stylesheet" href="~/css/Presentacion.css" />
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
+
+            <div>
+                <style>
+                    .TamañoLogo {
+                        width: 60px;
+                    }
+                </style>
+                <a asp-page="/Index"><img class="TamañoLogo" src="~/img/Logo.png" /></a>
+            </div>
+
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-page="/Index">VeteriSystems</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+
+                        <!--HOME-->
+
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-page="/Index">Inicio</a>
+                        </li>
+
+                        <!--Arbol-->
+
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-page="/Cruces/Index">Árbol Genealógico</a>
+                        </li>
+
+
+
+                        @if (string.IsNullOrEmpty(Context.Session.GetString("usuario")))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-light" asp-area="" asp-page="/Presentación">Iniciar Sesión</a>
+                            </li>
+                        }
+
+
+                        <!--EJEMPLARES-->
+                        @if (string.IsNullOrEmpty(Context.Session.GetString("usuario")))
+                        {
+
+                        }
+                        else
+                        {
+                            <li class="nav-item dropdown">
+
+                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Ejemplares</a>
+
+                                <div class="dropdown-menu">
+                                    <h6 class="dropdown-header">Machos</h6>
+                                    <a class="dropdown-item" asp-page="/EjemplaresMachos/Index">Catalogo Machos</a>
+                                    <a class="dropdown-item" asp-page="/EjemplaresMachos/Create">Registrar Macho</a>
+
+                                    <div class="dropdown-divider"></div>
+
+                                    <h6 class="dropdown-header">Hembras</h6>
+                                    <a class="dropdown-item" asp-page="/EjemplaresHembras/Index">Catalogo Hembras</a>
+                                    <a class="dropdown-item" asp-page="/EjemplaresHembras/Create">Registrar Hembra</a>
+
+
+                                </div>
+                            </li>
+                        }
+
+                        <!--CRUZAS-->
+                        @if (string.IsNullOrEmpty(Context.Session.GetString("usuario")))
+                        {
+
+                        }
+                        else
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Cruces</a>
+
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" asp-page="/Cruces/Create">Registrar</a>
+                                    <a class="dropdown-item" asp-page="/Cruces/Index">Consultar</a>
+                                    <!--<div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Mis Cruzas</a>-->
+                                </div>
+                            </li>
+                        }
+
+
+                        <!--CRIADORES-->
+                        @if (Context.Session.GetString("nivel") == "Admin")
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Criadores</a>
+
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" asp-page="/Criadores/Create">Registrar</a>
+                                    <a class="dropdown-item" asp-page="/Criadores/Index">Consultar</a>
+                                </div>
+                            </li>
+                        }
+                        else
+                        {
+
+                        }
+
+                        @if (string.IsNullOrEmpty(Context.Session.GetString("usuario")))
+                        {
+
+                        }
+                        else
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">@Html.Raw(Context.Session.GetString("usuario"))</a>
+                                <div class="dropdown-menu">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/cerrarsesion">Cerrar Sesión</a>
+                                </div>
+
+                            </li>
+                        }
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @{
+                @using Microsoft.AspNetCore.Http;
+
+                @if (string.IsNullOrEmpty(Context.Session.GetString("usuario")))
+                {
+
+
+                }
+                else
+                {
+                    <h5 class="text-muted">
+                        @Html.Raw("Bienvenido " + Context.Session.GetString("nivel"))
+                        <!--Html.Raw("Bienvenido " + Context.Session.GetString("nivel") + " " + Context.Session.GetString("usuario"))-->
+                    </h5>
+                }
+            }
+            @RenderBody()
+        </main>
+        
+    </div>
+
+    <footer class="bg-dark">
+
+        <div class="container">
+            <div class="row">
+
+                <div class="footer-col">
+                    <br />
+                    <h4>Nosotros</h4>
+                    <ul>
+                        <li><a asp-page="/QuienesSomos">¿Quienes Somos?</a></li>
+                        <li><a asp-page="/Portada">Presentación</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <br />
+                    <h4>¿Bugs? <i class="fas fa-bug"></i> ¡Reportalos!</h4>
+                    <ul>
+                        <li><p class="text-white footerText">cmezquita.alv@gmail.com</p></li>
+
+                        <li><p class="text-white footerText">soyreke@gmail.com</p></li>
+
+                        <li><p class="text-white footerText">sulubjavier23@gmail.com</p></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <br />
+                    <h4>Contáctanos</h4>
+                    <ul>
+
+                        <li><a class="text-white">Carlos Mezquita / Diseñador</a></li>
+                        <li><h6 class="text-white footerText">+52 2281957753</h6></li>
+
+                        <li><a class="text-white">Fabian Aguilar / Developer</a></li>
+                        <li><h6 class="text-white  footerText">+52 9993826099</h6></li>
+
+                        <li><a class="text-white">Javier Sulub / Desarrollador</a></li>
+                        <li><h6 class="text-white  footerText">+52 9992167757</h6></li>
+
+
+                    </ul>
+                </div>
+
+                <!--REDES SOCIALES-->
+                <div class="footer-col">
+                    <br />
+                    <h4>Redes Sociales</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/Carlos.mezquitaalvarado/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/CarlosMezq22"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/carlos.mezq/?hl=es"><i class="fab fa-instagram"></i></a>
+                        <br />
+                        <a href="https://www.facebook.com/fabian.av.37"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/soyelrivero/?hl=es"><i class="fab fa-instagram"></i></a>
+                        <br />
+                        <a href="https://www.facebook.com/javielalexander.sulub"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/javier.sulub/?hl=es"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
